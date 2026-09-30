@@ -47,3 +47,35 @@ function clearForm() {
 	document.getElementById("category").value = "";
 	document.getElementById("date").value = "";
 }
+
+var CATEGORIES = ["Food", "Transport", "Entertainment", "Other"];
+
+function showBudgets() {
+  var list = document.getElementById("budget-list");
+  list.innerHTML = "";
+  var budgets = loadBudgets();
+  for (var i = 0; i < CATEGORIES.length; i++) {
+    var c = CATEGORIES[i];
+    if (budgets[c] !== undefined) {
+      var item = document.createElement("li");
+      item.textContent = c + ": KES " + getCategoryTotal(c) +
+        " spent of KES " + budgets[c];
+      list.appendChild(item);
+    }
+  }
+}
+
+function showAlert(text) {
+  document.getElementById("alert").textContent = text;
+}
+
+function showBudgetMessage(text) {
+  document.getElementById("budget-message").textContent = text;
+}
+
+function readBudgetForm() {
+  return {
+    category: document.getElementById("budget-category").value,
+    limit: document.getElementById("budget-limit").value
+  };
+}

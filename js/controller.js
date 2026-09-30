@@ -3,6 +3,7 @@
 function refreshScreen() {
   showExpenses();
   showTotal();
+  showBudgets();
 }
 
 function handleAdd() {
@@ -13,6 +14,7 @@ function handleAdd() {
   }
   addExpense(form.description, form.amount, form.category, form.date);
   showMessage("");
+  showAlert(checkBudget(form.category));
   clearForm();
   refreshScreen();
 }
@@ -22,5 +24,18 @@ function handleDelete(id) {
   refreshScreen();
 }
 
+function handleSetBudget() {
+  var form = readBudgetForm();
+  if (form.limit === "" || Number(form.limit) <= 0) {
+    showBudgetMessage("Please enter a budget amount greater than 0.");
+    return;
+  }
+  setBudget(form.category, form.limit);
+  showBudgetMessage("");
+  document.getElementById("budget-limit").value = "";
+  refreshScreen();
+}
+
 document.getElementById("add-btn").onclick = handleAdd;
+document.getElementById("budget-btn").onclick = handleSetBudget;
 refreshScreen();

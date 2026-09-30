@@ -47,3 +47,48 @@ function getTotal() {
   }
   return total;
 }
+
+var BUDGET_KEY = "mpems_budgets";
+
+function loadBudgets() {
+  var saved = localStorage.getItem(BUDGET_KEY);
+  if (saved === null) {
+    return {};
+  }
+  return JSON.parse(saved);
+}
+
+function setBudget(category, limit) {
+  var budgets = loadBudgets();
+  budgets[category] = Number(limit);
+  localStorage.setItem(BUDGET_KEY, JSON.stringify(budgets));
+}
+
+function getCategoryTotal(category) {
+  var expenses = loadExpenses();
+  var total = 0;
+  for (var i = 0; i < expenses.length; i++) {
+    if (expenses[i].category === category) {
+      total = total + expenses[i].amount;
+    }
+  }
+  return total;
+}
+
+function checkBudget(category) {
+  var budgets = loadBudgets();
+  var limit = budgets[category];
+  if (limit === undefined) {
+    return "";
+  }
+  var spent = getCategoryTotal(category);
+  if (spent >= limit) {
+    return "Warning: you have reached or passed your " + category +
+      " budget of KES " + limit + ".";
+  }
+  if (spent >= limit * 0.8) {
+    return "Careful: you have used " + Math.round(spent / limit * 100) +
+      "% of your " + category + " budget.";
+  }
+  return "";
+}
