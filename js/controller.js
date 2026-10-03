@@ -69,3 +69,7 @@ document.getElementById("budget-btn").onclick = handleSetBudget;
 document.getElementById("log-btn").onclick = handleShowLog;
 document.getElementById("clear-log-btn").onclick = handleClearLog;
 refreshScreen();
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
