@@ -43,3 +43,10 @@ Part 3 - added the Model (localStorage). Challenge: opened the VS Code Debug Con
 - Solution: I opened service-worker.js in the editor and added the line there. Rule learned: bash blocks go in the terminal, code blocks go in files.
 - Limitations: budget alerts and the expense list lines stay in English, and the error log is English only. Translations need review by a Swahili speaker.
 - RAPID link: Inclusivity (#21, #22, #23).
+
+## Part 9 - Publish on GitHub Pages (04/10/2026)
+- Done: enabled GitHub Pages from the main branch, root folder. Live address: https://worganskiy-design.github.io/mpems/
+- Tested: opened the site on a laptop and installed it on a phone. Offline test in airplane mode:worked
+- Challenge: I first opened my account settings instead of the repository settings.
+- Solution: Pages is under the repository's own Settings tab.
+- RAPID link: Inclusivity (#24) - works offline. Responsibility - free hosting, no server.
