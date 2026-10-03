@@ -1,6 +1,6 @@
 // service-worker.js - stores the app files so MPEMS works offline
 
-var CACHE_NAME = "mpems-v1";
+var CACHE_NAME = "mpems-v2";
 
 var FILES = [
   "./",
@@ -9,6 +9,7 @@ var FILES = [
   "js/model.js",
   "js/view.js",
   "js/controller.js",
+    "js/language.js",
   "manifest.json",
   "icons/icon-192.png",
   "icons/icon-512.png"

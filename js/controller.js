@@ -4,6 +4,7 @@ function refreshScreen() {
   showExpenses();
   showTotal();
   showBudgets();
+  applyLanguage();
 }
 
 function validateExpense(form) {
@@ -69,6 +70,12 @@ document.getElementById("budget-btn").onclick = handleSetBudget;
 document.getElementById("log-btn").onclick = handleShowLog;
 document.getElementById("clear-log-btn").onclick = handleClearLog;
 refreshScreen();
+
+var langSelect = document.getElementById("language");
+langSelect.value = currentLang;
+langSelect.onchange = function () {
+  setLanguage(langSelect.value);
+};
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js");

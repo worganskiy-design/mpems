@@ -12,9 +12,13 @@
   <link rel="apple-touch-icon" href="icons/icon-192.png">
 </head>
 <body>
-  <header>
+    <header>
     <h1>MPEMS</h1>
     <p>Manual Personal Expense Management System</p>
+    <select id="language" aria-label="Language / Lugha">
+      <option value="en">English</option>
+      <option value="sw">Kiswahili</option>
+    </select>
   </header>
     <main>
     <section id="add-section">
@@ -63,21 +67,22 @@
 
     <section id="list-section">
       <h2>My Expenses</h2>
-      <p>Total spent: KES <span id="total">0</span></p>
+           <p><span class="tr">Total spent: KES</span> <span id="total">0</span></p>
       <ul id="expense-list"></ul>
     </section>
 
         <section id="log-section">
       <h2>Error Log</h2>
-      <p>Problems recorded by the app on this device.</p>
+           <p class="tr">Problems recorded by the app on this device.</p>
       <button id="log-btn">Show Error Log</button>
       <button id="clear-log-btn">Clear Error Log</button>
       <ul id="log-list"></ul>
     </section>
 
   </main>
-    <script src="js/model.js"></script>
+      <script src="js/model.js"></script>
   <script src="js/view.js"></script>
+  <script src="js/language.js"></script>
   <script src="js/controller.js"></script>
   </body>
 </html>

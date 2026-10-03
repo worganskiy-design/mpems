@@ -36,3 +36,10 @@ Part 3 - added the Model (localStorage). Challenge: opened the VS Code Debug Con
 - Challenge: none
 - RAPID link: Inclusivity (#24) - offline mode for users with poor connectivity. Responsibility - lightweight files and no server.
 
+## Part 8 - Language switch and accessibility (04/10/2026)
+- Done: added language.js with English and Kiswahili text, a language selector in the header, translated error messages, and added language.js to the offline file list (cache version v2).
+- Tested: choosing Kiswahili changed headings, labels, buttons and categories, the choice stayed after refresh, and language.js appeared in Cache storage. Keyboard Tab test and 200% zoom test: [result]. Lighthouse accessibility score: [score].
+- Challenge: I pasted a line of code into the terminal instead of the file.
+- Solution: I opened service-worker.js in the editor and added the line there. Rule learned: bash blocks go in the terminal, code blocks go in files.
+- Limitations: budget alerts and the expense list lines stay in English, and the error log is English only. Translations need review by a Swahili speaker.
+- RAPID link: Inclusivity (#21, #22, #23).

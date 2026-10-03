@@ -29,7 +29,7 @@ function showTotal() {
 }
 
 function showMessage(text) {
-	document.getElementById("message").textContent = text;
+  document.getElementById("message").textContent = tr(text);
 }
 
 function readForm() {
@@ -70,7 +70,7 @@ function showAlert(text) {
 }
 
 function showBudgetMessage(text) {
-  document.getElementById("budget-message").textContent = text;
+  document.getElementById("budget-message").textContent = tr(text);
 }
 
 function readBudgetForm() {

@@ -96,3 +96,10 @@ li button {
   color: #b00020;
   font-weight: bold;
 }
+
+header select {
+  width: auto;
+  margin-top: 10px;
+  padding: 6px 10px;
+  font-size: 16px;
+}
