@@ -3,11 +3,16 @@
 var STORAGE_KEY = "mpems_expenses";
 
 function loadExpenses() {
-	var saved = localStorage.getItem(STORAGE_KEY);
-	if (saved === null) {
-		return [];
-	}
-	return JSON.parse(saved);
+  var saved = localStorage.getItem(STORAGE_KEY);
+  if (saved === null) {
+    return [];
+  }
+  try {
+    return JSON.parse(saved);
+  } catch (error) {
+    logError("Saved expenses could not be read: " + error.message);
+    return [];
+  }
 }
 
 function saveExpenses(expenses) {
@@ -91,4 +96,27 @@ function checkBudget(category) {
       "% of your " + category + " budget.";
   }
   return "";
+}
+
+var LOG_KEY = "mpems_errorlog";
+
+function loadErrorLog() {
+  var saved = localStorage.getItem(LOG_KEY);
+  if (saved === null) {
+    return [];
+  }
+  return JSON.parse(saved);
+}
+
+function logError(message) {
+  var log = loadErrorLog();
+  log.push({ time: new Date().toLocaleString(), message: message });
+  if (log.length > 50) {
+    log.shift();
+  }
+  localStorage.setItem(LOG_KEY, JSON.stringify(log));
+}
+
+function clearErrorLog() {
+  localStorage.removeItem(LOG_KEY);
 }

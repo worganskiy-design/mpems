@@ -79,3 +79,20 @@ function readBudgetForm() {
     limit: document.getElementById("budget-limit").value
   };
 }
+
+function showErrorLog() {
+  var list = document.getElementById("log-list");
+  list.innerHTML = "";
+  var log = loadErrorLog();
+  if (log.length === 0) {
+    var empty = document.createElement("li");
+    empty.textContent = "No errors recorded.";
+    list.appendChild(empty);
+    return;
+  }
+  for (var i = 0; i < log.length; i++) {
+    var item = document.createElement("li");
+    item.textContent = log[i].time + " - " + log[i].message;
+    list.appendChild(item);
+  }
+}

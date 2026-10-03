@@ -16,3 +16,9 @@ Part 3 - added the Model (localStorage). Challenge: opened the VS Code Debug Con
 - Done: added view.js (shows the list, total and messages) and controller.js (connects the Add and Delete buttons to the Model). Added a style for the Delete button.
 - Tested: added expenses, checked the total, deleted one, refreshed the page and the data stayed.
 - Challenge: none
+
+## Part 5 - Budgets and alerts ([date])
+- Done: added budget functions to model.js (loadBudgets, setBudget, getCategoryTotal, checkBudget), a Set a Budget card in index.html, display functions in view.js, the Save Budget button in controller.js, and styles for the alert messages.
+- Tested: checked the Model in the browser console first, then saved a Food budget of 500, added Food expenses and saw the "Careful" message near 80% and the "Warning" message at the limit. Budgets and expenses were still there after refreshing the page.
+- Challenge: none
+- RAPID link: Responsibility - budget warnings help users control spending. Integrity - budget data stays on the user's device.
